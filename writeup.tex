@@ -1,0 +1,241 @@
+\documentclass[12pt,twoside]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
+\usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage{amsmath} % for '\text' macro
+\usepackage{natbib}
+\bibliographystyle{plain}
+%\addbibresource{references.bib}
+\usepackage[intoc]{nomencl}
+\makenomenclature
+\graphicspath{ {./images/} }
+
+
+
+\title{Master Thesis}
+\author{Vishal Joshi}
+\date{January 2021}
+
+\begin{document}
+
+\maketitle
+	
+\chapter*{Abstract}
+	
+\chapter*{Declaration}
+	
+\chapter*{Acknowledgements}
+	
+\tableofcontents
+\listoffigures
+\listoftables
+%\chapter*{Nomenclature}
+
+	
+\chapter{Introduction}
+The aim of this experiment \par
+	
+we will think.
+	
+\chapter{Theoretical Background}		
+Fluid mechanics is the study of fluids either in motion (fluid dynamics) or at rest (fluid statics). Both gases and liquids are classified as fluids, and the number of fluid engineering applications is enormous: breathing, blood flow, swimming, pumps, fans, turbines, airplanes, ships, rivers, windmills, pipes, missiles, icebergs, engines, filters, jets, and sprinklers, to name a few.  When you think about it, almost every-thing on this planet either is a fluid or moves within or near a fluid.
+	
+\section{The concept of a fluid}
+From the point of view of fluid mechanics, all matter consists of only two states, fluid and solid. The technical distinction lies with the reaction of the two to an applied shear or tangential stress. A solid can resist a shear stress by a static deflection; a fluid cannot. Any shear stress applied to a fluid, no matter how small, will result in motion of that fluid. The fluid moves and deforms continuously as long as the shear stress is applied. As a corollary, we can say that a fluid at rest must be in a state of zero shear stress, a state often called the hydrostatic stress condition in structural analysis. In this condition, Mohr’s circle for stress reduces to a point, and there is no shear stress on any plane cut through the	element under stress.\par
+	
+The effect of cohesive forces in liquid and in gases is of interest. A liquid, being composed of relatively close-packed molecules with strong cohesive forces, tends to retain its volume and will form a free surface in a gravitational field if unconfined from above. Since gas molecules are widely spaced with negligible cohesive forces, a gas is free to expand until it encounters confining walls. A gas has no definite volume, and when left to itself without confinement, a gas forms an atmosphere that is essentially hydrostatic. Gases cannot form a free surface, and thus gas flows are rarely concerned with gravitational effects other than buoyancy.\par
+	
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.95\linewidth]{images/img1.png}
+	\caption{A solid at rest can resist shear. \textit{(a)} Static deflection of the
+			solid; \textit{(b)} equilibrium and Mohr’s circle for solid element \textit{A}. A fluid cannot resist shear. \textit{(c)} Containing walls are needed; \textit{(d)} equilibrium and Mohr’s circle for fluid element \textit{A}. Image courtesy: Fluid Mechanics by Frank M. White}
+	\label{img1}
+\end{figure}
+
+Figure \ref{img1} illustrates a solid block resting on a rigid plane and stressed by its own weight. The solid sags into a static deflection, shown as a highly exaggerated dashed line, resisting shear without flow. A free-body diagram of element \textit{A} on the side of the block shows that there is shear in the block along a plane cut at an angle $\theta$ through \textit{A}. Since the block sides are unsupported, element \textit{A} has zero stress on the left and right sides and compression stress $\sigma = -p$ on the top and bottom. Mohr’s circle does not reduce to a point, and there is nonzero shear stress in the block.\par
+	
+The liquid and gas at rest in Fig.\ref{img1} require the supporting walls in order to eliminate shear stress. The walls exert a compression stress of $-p$ and reduce Mohr’s circle to a point with zero shear everywhere i.e., the hydrostatic condition. The liquid retains its volume and forms a free surface in the container. If the walls are removed, shear develops in the liquid and a big splash results. If the container is tilted, shear again develops, waves form, and the free surface seeks a horizontal configuration, pouring out over the lip if necessary. Meanwhile, the gas is unrestrained and expands out of the container, filling all available space. Element \textit{A} in the gas is also hydrostatic and exerts a compression stress $-p$ on the walls. \cite{White} 
+
+\section{Properties of the velocity field}
+In a given flow situation, the determination, by experiment or theory, of the properties of the fluid as a function of position and time is considered to be the solution to the problem. In almost all cases, the emphasis is on the space–time distribution of the fluid properties. One rarely keeps track of the actual fate of the specific fluid particles. This treatment of properties as continuum-field functions distinguishes fluid mechanics from solid mechanics, where we are more likely to be interested in the trajectories of individual particles or systems.
+
+\subsection{The velocity field}
+Foremost among the properties of a flow is the velocity field \textit{V}(\textit{x}, \textit{y}, \textit{z}, \textit{t}). In general, velocity is a vector function of position and time and thus has three
+components \textit{u}, \textit{v}, and \textit{w}, each a scalar field in itself:
+
+\begin{equation} \label{eq:2.1}
+	V(x, y, z, t) = \textbf{i}u(x, y, z, t) + \textbf{j}v(x, y, z, t) + \textbf{k}w(x, y, z, t)
+\end{equation}
+
+
+\subsection{The acceleration field}
+The acceleration vector, $ \textbf{a} = d\textbf{V}/dt $ , occurs in Newton’s law for a fluid and thus is
+very important. In order to follow a particle in the Eulerian frame of reference, the final result for acceleration is nonlinear and quite complicated. Here we only give the formula:
+
+\begin{equation} \label{eq:2.2}
+	\textbf{a} = \dfrac{d\textbf{V}}{dt} = \dfrac{\partial \textbf{V}}{\partial t} + u \dfrac{\partial \textbf{V}}{\partial x} +  v \dfrac{\partial \textbf{V}}{\partial y} + w \dfrac{\partial \textbf{V}}{\partial z}
+\end{equation}
+
+where $(u, v, w)$ are the velocity components from Eq. \eqref{eq:2.1}. \cite{White}
+
+\section{Properties of fluids}
+\subsection{Density}
+The density of a fluid, denoted by $\rho$ (lowercase Greek roh), is its mass per unit volume. The unit of mass density in SI unit is kilogram per cubic metre, i.e., $kg/m^{3}$. The density of liquids may be considered as constant while that of gases changes with the variation of pressure and temperature.\par
+	
+The value of density of water is 1 $gm/cm^{3}$ or 1000 $kg/m^{3}$. \cite{White}
+	
+\subsection{Specific Weight}
+Specific weight of a fluid, denoted by $\gamma$ (lowercase Greek gamma), is its weight per unit volume. The specific weight is given by
+\begin{equation}
+		\gamma = \rho\textit{g} \label{eq:2.3}
+\end{equation}
+The units of $\gamma$ are weight per unit volume, in $lbf/ft^3$ or $N/m^3$. The specific weight of air and water at 20°C and 1 atm are approximately \newline
+	
+	\[\gamma_{air} = (1.205 kg/m^3)(9.807 m/s^2) = 11.8 N/m^3 \]
+	\[ \gamma_{water} = (998 kg/m^3)(9.807m/s^2) = 9790 N/m^3\]
+	The specific weight is generally very useful in hydrostatic pressure applications. \cite{White}
+\subsection{Specific Gravity}
+Specific Gravity, denoted by SG, is the ratio of a fluid density to a standard reference fluid, usually water at 4°C (for liquids) and air (for gases) \cite{White}:
+	
+	
+\begin{equation} \label{eq:2.4}
+SG_{gas} = \frac{\rho_{gas}}{\rho_{air}}  = \frac{\rho_{gas}}{1.205 kg/m^3}
+\end{equation}
+
+\subsection{Potential and Kinetic Energies}
+In thermostatics the only energy in a substance is that stored in a system by molecular
+activity and molecular bonding forces. This is commonly denoted as \textit{internal energy \^{u}}. A commonly accepted adjustment to this static situation for fluid flow is to
+add two more energy terms that arise from newtonian mechanics: potential energy
+and kinetic energy. \par 
+
+The potential energy equals the work required to move the system of mass \textit{m} from
+the origin to a position vector \textbf{r} = \textbf{i}\textit{x} + \textbf{j}\textit{y} + \textbf{k}\textit{z} against against a gravity field \textbf{g}. Its value is $ \textit{\textbf{-mg}} \cdot \textit{\textbf{r}} $ or $ \textit{\textbf{-g}} \cdot \textit{\textbf{r}} $  per unit mass. \par
+
+The kinetic energy equals to the work required to change the speed of mass from zero velocity to velocity \textit{V}. Its value is $ \frac{1}{2}mV^{2} $ or $ \frac{1}{2} V^{2} $ per unit mass. \par
+
+Then by common convention the total stored energy \textit{e} per unit mass in fluid mechanics is the sum of three terms:
+
+\begin{equation} \label{eq:2.5}
+	e =\text{\^{u}} + \frac{1}{2}V^{2} + (-g\cdot r)
+\end{equation}
+Also, \textit{z} as upward, so that $\textit{\textbf{g}}$ = $\textit{-g} \textbf{k} $ and $ \textit{\textbf{g}} \cdot \textit{\textbf{r}} = \textit{-gz} $. Then the Eq. \eqref{eq:2.5} becomes 
+
+\begin{equation} \label{eq:2.6}
+	e = \text{\^{u}} + \frac{1}{2}V^{2} + gz
+\end{equation}
+
+The molecular internal energy \text{\^{u}} is a function of \textit{T} and \textit{p} for the single-phase pure substance, whereas the potential and kinetic energies are kinematic quantities. \cite{White}
+
+\subsection{State Relation for Gases}
+Thermodynamic properties are found both theoretically and experimentally to be
+related to each other by state relations that differ for each substance. We shall confine ourselves here to single-phase pure substances, such as water in its liquid phase. The second most common fluid, air, is a mixture of gases, but since the mixture ratios remain nearly constant between 160 and 2200 K, in this temperature range air can be considered to be a pure substance.\par
+
+All gases at high temperatures and low pressures (relative to their critical point)
+are in good agreement with the \textit{perfect-gas law} \cite{White}
+
+\begin{equation} \label{eq:2.7}
+	p = \rho RT
+\end{equation}
+
+\subsection{Surface tension}
+A liquid, being unable to expand freely, will form an interface with a second liquid
+or gas. Molecules deep within the liquid repel each other because of their close packing. Molecules at the surface are less dense and attract each other. Since half of their neighbors are missing, the mechanical effect is that the surface is in tension. \par 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\linewidth]{contact_angle}
+	\caption{Contact-angle effects at liquid–gas–solid interface. Image courtesy: Fluid Mechanics by Frank M. White}
+	\label{fig:contact_angle}
+\end{figure}
+
+A second important surface effect is the \textit{contact angle} $\theta$, which appears when a
+liquid interface intersects with a solid surface. If the contact angle is less than 90\degree, the liquid is said to \textit{wet} the solid; if $\theta >$ 90\degree, the liquid is termed \textit{nonwetting}. \cite{White}
+
+\section{Propellant Management Devices (PMD)}
+Gravity affects many processes in space, such as the separation of the liquid and vapor phases within a propellant tank. In general, the lowest achievable potential energy state within a tank governs the location of the L/V interface. In the standard gravity field of Earth, fluid density dictates this location because the heavier liquid settles to the bottom and the lighter vapor rises to the top. In the microgravity conditions of space however, surface tension becomes the controlling mechanism for the phase separation because the liquid tends to wet the walls, leaving a gaseous core in the center. To meet vapor-free transfer requirements for both in-space cryogenic engines and cryogenic fuel depots, any
+one of a number of PMDs may be required inside the tank. \par
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/lad_requirement}
+	\caption{Illustration of why liquid acquisition devices are required.}
+	\label{fig:ladrequirement}
+\end{figure}
+
+Figure \ref{fig:ladrequirement} illustrates why LADs are required for successful engine operation. On the
+ground or during launch, LADs are generally not required because vehicle thrust and high-g levels can maintain phase separation within the propellant tank. In microgravity however, in the absence of settling thrusting maneuvers to favorably position the liquid, there is no way to guarantee vapor-free propellant flow out of the tank without using a LAD. After sufficient time, in an unsettled environment, liquid and gas phases will combine such that a two phase mixture may cover the outlet. At a bare minimum, a mixture of gas and liquid sent to the engine will cause combustion instabilities, and at worst cause complete engine failure. \par
+
+The purpose of a PMD is to separate liquid and gas phases within a propellant tank and to transfer vapor-free propellant from a storage tank to a transfer line en route to one of two customers, an engine or receiver tank (depot application), in any gravitational or thermal environment. The generic system architecture for propellant transfer is shown in Figure \ref{fig:img3}. Complete propellant transfer from a storage tank to the customer is divided among the following four stages:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/img3}
+	\caption{Generic supply and receiver system where the downstream customer is either an engine or receiver tank.}
+	\label{fig:img3}
+\end{figure}
+
+\begin{enumerate}
+	\item vapor free liquid extraction from the storage tank
+	\item chill-down of the transfer line
+	\item chill-down of the receiver system
+	\item fill of the receiver system.
+\end{enumerate}
+
+
+PMDs represent the first step in the propellant transfer process.\par
+PMDs were born out of the desire to perform engine restarts in a low-g environment. PMDsmust be designed and implemented
+to ensure that there is always communication between the PMD and liquid anywhere
+within the tank, and to ensure that the tank outlet is sufficiently covered with liquid during
+any phase of the mission. In the 1-g field of Earth, transfer of liquid is easy because the L/V
+interface in the tank is always such that the heavier liquid resides at the bottom of the tank
+and the lighter vapor rises to the top; a simple hole in the bottom of the tank is sufficient.
+In reduced gravity environments $(10^{-2}-10^{-4}g)$, at high liquid levels, settling thrusting
+maneuvers can be used to favorably position liquid over the tank outlet. At low liquid
+levels, simple bubble arrestors or sumps can be inserted over the tank outlet to prevent
+vapor ingestion into the transfer line in order to drain the remaining liquid residuals.\par
+	
+In the low Bond number ($Bo$) microgravity environment of space however, where Bond number is defined as:
+
+\begin{equation} \label{eq:2.8}
+	Bo = \dfrac{\rho g L^{2}_{C}}{\gamma _{LV}}
+\end{equation}	
+
+where $\rho$ is the liquid density and $L_{c}$ is the characteristic length of the system, single phase
+liquid extraction becomes a challenge because surface tension forces generally become the driving force for phase separation and liquid flow. Liquid tends to wrap the outer walls, leaving a gaseous core in the center of the tank. Multiple PMDs may be required to sufficiently cover the outlet with liquid to counteract low \textit{g}-levels. Full communication PMDs, or devices that maintain communication between liquid, PMD, and tank outlet at all times, are often required in microgravity systems so that propellant can be accessed from anywhere within the tank. When supplying cryogenic liquids to the outlet of the tank, low gravity fluid control acquisition is further complicated over storable liquid due to the low surface tension and high susceptibility to parasitic heat leak associated with cryogenic propellants. \par
+
+PMDs come in numerous styles and designs, each with its own specific purpose. Multiple PMDs are often required to meet the demands of a particular mission, whether using storable or cryogenic propellants. PMDs have been used extensively in chemical storable propulsion systems and can even be implemented in electric propulsion systems. PMD performance is determined by three primary characteristics; PMD system
+mass, demand mass flow rate, and expulsion efficiency (EE), which is defined as
+\begin{equation} \label{eq:2.9}
+	EE = \dfrac{V_{residuals}}{V_{tank}}
+\end{equation}
+
+where $V_{residuals}$ is the residual liquid propellant left in the tank when the PMD breaks down
+and admits vapor into the transfer line, and $V_{tank}$ is the internal volume of the tank. Therefore
+EE is a measure of how much of the tank is drained through the LAD before the LAD breaks down. The threemost popular capillary driven PMDs are vanes, sponges, and screen channel LADs but there are many other non-capillary systems which have been used in previous years. \cite{hartwig2015liquid}
+
+\subsection{Screen channel Liquid Acquisition Device (SCLAD)}
+Screens are an important part of propellant management devices. Some features are:
+\begin{enumerate}
+	\item Wicking performance
+	\item Bubble point pressure 
+	\item Flow-through screen resistance 
+\end{enumerate}
+\chapter{State of the Art}
+	%\input{chapters/chapter03}
+	
+\chapter{Materials and Methods}
+	%\input{chapters/chapter04}
+	
+\chapter{Data Sampling, Evaluation and Reduction}
+	%\input{chapters/conclusion}
+	
+\chapter{Results and Comparison}
+
+
+\bibliography{references}
+%\printbibliography
+\printnomenclature
+
+\end{document}
